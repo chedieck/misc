@@ -5,4 +5,4 @@ Simple and silly scripts that make my life easier.
 
 `recorder.py` -> script to handless record audio on telegram-desktop, can be used to play guitar
 
-`fix_keyboard.sh` -> utility to reconfigured keyboards after physically disconnecting them
+`fix_keyboard.sh` -> utility to reconfigure keyboards after physically disconnecting them
