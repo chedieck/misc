@@ -1,5 +1,6 @@
-import os
 from time import sleep, time
+
+# Fetch relevant network information utils
 
 
 def get_signal():
@@ -7,6 +8,8 @@ def get_signal():
         auxstr = f.read().splitlines()[-1]
         aux = auxstr.split()
         signal = int(aux[3].replace('.', ''))
+    return signal
+
 
 def get_total_bytes():
     """divide result by 10**20 to get it on MiB
@@ -17,19 +20,25 @@ def get_total_bytes():
         aux = auxstr.split()
         bytes = int(aux[1])
     return bytes
+
+
 def format_bytes(b: int) -> str:
-    if b >= 10**12: #TB
-        return str(b/10**12 
-    if b >= 10**9: #GB
-    if b >= 10**6: #MB
-    if b >= 10**3: #KB
-    
+    if b >= 10**12:  # TB
+        return str(b/10**12) + 'TB'
+    elif b >= 10**9:  # GB
+        return str(b/10**9) + 'GB'
+    elif b >= 10**6:  # MB
+        return str(b/10**6) + 'MB'
+    elif b >= 10**3:  # KB
+        return str(b/10**3) + 'KB'
+
 
 def get_speed(lookback=1):
     last_bytes = get_total_bytes()
     sleep(lookback)
     new_bytes = get_total_bytes()
     return (new_bytes-last_bytes)/lookback
+
 
 def live_speed(lookback=3, refresh=0.05):
     t0 = time()
