@@ -1,14 +1,6 @@
 import pyautogui as pag
 import math
-import resource
 # simple script to make mouse unusable.
-
-
-# we dont want the script to use too much cpu
-def limit_memory(maxsize):
-    soft, hard = resource.getrlimit(resource.RLIMIT_AS)
-    resource.setrlimit(resource.RLIMIT_AS, (maxsize, hard))
-
 
 pag.PAUSE = 0.005
 
