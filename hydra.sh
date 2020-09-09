@@ -1,4 +1,3 @@
-process= $(xprop -id $(xdotool getactivewindow) | grep WM_CLASS | awk '{print $3}'| sed 's/"//g' | sed 's/,//g')
-
+process= $(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 eval $process
 
