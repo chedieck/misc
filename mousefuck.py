@@ -5,7 +5,7 @@ import os
 
 PID = os.getpid()
 pag.PAUSE = 0.005
-with open("/tmp/mousefuck.pid", "w") as f:
+with open(f"/tmp/mousefuck.{PID}.pid", "w") as f:
     f.write(str(PID))
 
 wid, hei = pag.size()
