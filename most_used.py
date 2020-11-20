@@ -6,6 +6,8 @@ from os.path import expanduser
 parser = argparse.ArgumentParser(description='get N most used commands')
 parser.add_argument('-n', type=int, help='show N most used commands')
 args = parser.parse_args()
+if not args.n:
+    args.n = 20
 
 
 # generating dict
